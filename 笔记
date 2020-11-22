@@ -1,0 +1,346 @@
+ALL WEB
+
+基础
+信息被传到IRA ， 去查dns ， 回到 chrome 通过各种不同协议去到id地址，那里会有不同的hyml/css/js
+取决于网速的，server位置，trip数量，
+
+HTML
+Html + tab 全展开
+<head>
+	title
+	<link css
+<>
+Tag ： <h1> </h1> header one  h1 - h2 - ..- h6  不同大小的header text 
+<p></p> paragraph tag 会分段落
+<strong></strong> bold  加粗
+<em></em> 强调 斜体 
+<ol>
+	<li></li>
+	<li></li>
+	</ol> order list  ， 里面的list 会有数字标签
+<ul></ul> 没有数字标签的list，会有黑点
+ 
+Self closing tag
+<br> break line
+<img src=“”  >
+
+Anchor tag
+<a href =“” > New Page </a> 
+
+Advanced html
+<form>.       (self closing tag , every input better have a name to separate, 对于选择的select，每一个select better 有一个value)
+	First Name <input type= “text” required>   </br> required ，必填
+	Email <input type= “email” required>
+	Password: <input type = “password” min = 5>
+	Birth: <input type = “date”> </br>
+	Gender: </br>   (give this radio a name 多选一 ，  )
+	<input type= “radio” name = “Gender”> Male </br>
+	<input type= “radio” name = “Gender” > Male </br>
+	<input type= “radio” name = “Gender” > Male </br>
+	Pets: </br> （多选）
+	<input type= “checkbox” > Cat</br>
+	<input type= “checkbox” > Dogs</br>
+	Cars:</br>
+	<select (multiple)>
+		<option value=“volvo“> volvo</option>
+		<option value=“audi“> volvo</option>
+	</select>
+	<input type =“submit” value = “”Register!>
+	<input type =“reset”>
+</form> 
+<span></span> for inline
+<div></div> for different part of content
+
+Html vs html5
+Semantic tags in Html5
+<header> <nav> <footer>
+
+CSS
+Follow the rule
+*Selector{
+	Property: value ;
+} 
+
+1.Html in head
+<link ..> css file
+<link.. > font file
+2.in tags
+3.Html in head creat <style> tag
+
+Properties: css-tricks.com  不同的有详细的图文
+Color , background
+Text-align:
+Border: 
+Display: inline-block 可以把几个分行了的弄成一行
+Cursor:
+
+Selectors
+Class加在selector里用作区别
+.class(类名){
+} 
+#div div + id = “div1”
+* 
+Element
+Element1 , element2
+Element1 element2 共同
+element1 > element2 parent 
+Element1 + element2 
+:hover 
+:last-child
+:first-child 
+!important 能override 所有选项
+
+决定style显示的原因：
+Specificity  Specificity.keegan.st 能区分出下面重要的要素的数量
+Importance
+
+Text and Font
+Text-decoration
+Text-transform
+Line-height : ?px
+Font-style/weight/size/family
+!! Google fonts 
+
+Images
+Img {
+Float: left / right
+如果图片太大比text多，下面的可能弄不清，需要clear
+Clear off
+Textalign
+
+Box model：
+border 边
+Padding：box 内
+Margin : box 外
+width / height : box 里内容
+
+Px VS em VS rem
+20px
+5em 5倍当前内容大小, 和内容相关
+2rem always ， 不变
+
+Advanced CSS
+先得到html ， 得到后从html读 需要css / fonts 等， 再传。收完css 才能显示，所以css大小决定渲染速度。 Css minify !!! 重要
+
+Flexbox 非常不错，弄container  ， 可以玩 flex box froggy
+.类名{. css-tricks
+	flex-wrap : wrap  :
+	display : flex;
+	justify-content : center ;
+}
+
+CSS3 latest CSS。很多动态不错的，不过需要去查浏览器支不支持
+Transition
+Transform : scale(1.1)
+
+Responsive UI : can see on developer tools on chrome 不同设备上
+
+Bootstrap 
+Different component CSS
+Link css 在head ， Link css 在body 最后 ， 有自定义的css 在bootstrap的css 后面 。 各种component 直接复制到html 
+
+CDN : Content delivery network
+
+😭Bootstrap Grid 
+Container :  很好用
+	Grid default have 12 spaces !!!!!!! 
+	col-sm / md - 3/6/12. Small / medium Very important  this depends on window size.
+
+Bootstrap starter template mega tag + can have perfect imp in css-tricks
+
+https://getbootstrap.com/docs/4.3/utilities/flex/ 
+div (header section) 在不同尺寸下 排列layout通过col-12 宽度来显示
+对于垂直的排布，用flexbox d-flex align-items-center h-100   高度100要打满
+
+Mailchimp
+Sign-up form ， 先加观众，add opt-in 可以让注册确认邮箱，防止spam
+create  campaign
+
+Github
+- [ ] New repository name chungngai09.github.io 
+Then copy all files to this folder on Desktop Github
+Then submit to master . Click branch.
+Then check out the chungngai09.github.io 
+- [ ] Or just create and upload online , 
+then setting make page in main then would a link https://chungngai09.github.io/Startup-of-the-year/.
+Edit. This link in readme file
+
+Animate CSS pre set CSS https://animate.style/
+要学会从已经有的css的上面借用 	.	<link
+*     rel="stylesheet"
+*     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+*   />
+
+Creative Tim 有很多现成有显示的template
+Free html/css templates http://www.mashup-template.com/templates.html
+Some useful resources 
+New: https://cruip.com/
+New: Bootstrap Templates 0  Bootstrap Templates 1  Creative Tim Templates 
+Bootstrap Templates 2
+Animate.css
+
+
+CSS Grid + CSS Layout
+We would design using css grid combined with Flexbox. We may don’t even need bootstrap or free templates.
+One important Flexbox 一维 CSS Grid 二维各种块
+
+Make a container like Flexbox for Grid
+Display : Grid
+Gap: 20px 间隔
+grid-Template-column / use 1fr , 1 fr 代表一块 1fr 1fr 2fr
+Grid-template-rows: 
+Can use repeat(3, 1 fr)
+Auto 可以代表一个fr ，但是会根据东西大小调节grid大小  
+grid-Template-colum : repeat(auto-fill, minmax(200px, 1fr)). 意思是小于200px，只要1fr
+
+对于单个部分，可以通过 grid-colunm : 1/4 ; 这个就有三个fr的大小 1/-1 这一行占满 
+or   span 2  占用2fr
+行如此，列也如此 。很好用，尤其在排列图片上
+https://grid.malven.co/  Grid CheatSheet  有现成的css 代码
+
+Css body 有 default margin 
+重要的练习 包括Nav,  Cover , Project Grid ,  Footer  有代码  重要！！！
+
+Github — Website(creative-time) — 1-2 Big Projects — Blog — open source project
+ Website 自我介绍 项目 linkedin 地址 ，github地址 等等 blog  
+
+Javascipt
+Very very important
+Script.js 在html里的body写<script type = “text/javascript” src= “script.js”>    xxxx    </script>  写body里很重要，css在head，先html 和 css
+Type :
+1.Number : 1 + 2 可以直接写包括算数符号
+2.string ： 用“” / ‘’ 哐住 “Hello” + “there!”    —> Hellothere! 
+3.Boolean 
+4.Undefined (var b ; b 就是undefined)
+
+Comparisons
+!==  不等
+=== 等
+>=
+<=
+>
+<
+
+JAVASCRIPT CONDITIONALS
+-----------------
+if
+else
+else if
+<!-- ternary operator -->
+<!-- switch -->
+
+JAVASCRIPT FUNCTIONS
+-----------------
+var a = function name() {}
+function name() {}
+return
+<!-- () => (new in ECMAScript 6) -->
+  
+
+Exercise  : 
+5 + "34" // "534"
+5 - "4" // 1
+10 % 5 // 0
+5 % 10 // 5
+"Java" + "Script" // "JavaScript"
+" " + " " //  "  "
+" " + 0 //  " 0"
+true + true // 2
+true + false // 1
+false + true //  1
+false - true //  -1
+3 - 4 //  -1
+"Bob" - "bill" // NAN
+
+5 >= 1 // true
+0 === 1 //  false
+4 <= 1 //  false
+1 != 1 //  false
+"A" > "B" //  false
+"B" < "C" //  true
+"a" > "A" //  true
+"b" < "A" //  false
+true === false //  false
+true != true // false
+
+
+// Make the string: "HI There! It's sunny out" by using the + sign.
+"Hi There! " + "It\'s \"sunny\" out"
+
+
+Javascript Variables
+Var George = "Hi There! " + "It\'s \"sunny\" out" ;
+George
+Var should start with word / _/ $
+
+prompt()
+Var number = Prompt (“what is your number”) ; 弹窗输入
+Var sum = Number(number) 
+
+alert()
+alert(Hi !!!)
+可以alert(sum) 接着上面promtp就可以告诉我们结果。好玩
+
+console.log()  在console显示，不会很烦人
+
+2 way to create a function 
+1. 有名
+function sayHelloo(){
+    console.log("Hello");
+}
+sayHelloo();
+2.无名，sayBye 是 variable ， function是 anomyumous function
+var sayBye = function(){
+    console.log("Bye");
+}
+sayBye()
+
+function sing(song){ 用argument会方便
+    console.log(song);
+    return xx ; (if we need )
+}  
+
+JAVASCRIPT DATA STRUCTURES 
+-----------------
+Array
+Object
+
+对于array
+var mixedArr = [ / / / / /] ; 可以有各种types 很灵活 ，都是index ,
+// 1. Remove the Banana from the array.
+array.shift();
+
+// 2. Sort the array in order. 
+array.sort();
+
+// 3. Put "Kiwi" at the end of the array.
+array.push("Kiwi");
+
+// 4. Remove "Apples" from the array.
+array.splice(0, 1);
+
+// 5. Sort the array in reverse order. 
+array.reverse();
+
+
+对于Object , 主要用来存信息
+var user = {
+    name : "aaa" ,
+    age : "1",
+    //
+    //
+    shout : function(){
+        console.log("a") ;
+    }
+} 用的大括号
+抓去object里，直接user.name 
+
+array 和 object 可以相互嵌套 ， object可以接一个function, 这个function就是一个method
+
+JAVASCRIPT LOOPING
+-----------------
+for
+while
+do 
+forEach (new in ECMAScript 5) 
+
