@@ -19,3 +19,5 @@ you should have at the end:
 // using this array,
 // var array2 = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
 // access "Oranges".
+
+

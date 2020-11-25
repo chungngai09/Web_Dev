@@ -1,0 +1,28 @@
+DOM Selectors
+--------------
+querySelector  找tag
+querySelectorAll
+
+getAttribute 找tag里的class
+setAttribute
+
+##Changing Styles 加style
+style.{property} //ok
+
+className //best 找class
+classList //best
+
+classList.add 如果有css里的类 直接加
+classList.remove 减
+classList.toggle 反转
+有这个就可以实现点击在原来的基础上不用下载html css 就改界面
+
+##Bonus
+innerHTML //DANGEROUS
+
+parentElement
+children
+
+##It is important to CACHE selectors in variables
+
+DOM Events
