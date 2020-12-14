@@ -22,7 +22,3 @@
   text-decoration: line-through;
 }
 
-/* make them in line */
-li{
-  display: inline-block;
-}

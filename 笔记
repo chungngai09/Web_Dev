@@ -392,3 +392,396 @@ li.appendChild , createTextNode("");
 Callback Functions , function后没加括号
 button.addEventListener("click", addListAfterClick);
 input.addEventListener("keypress", addListAfterKeypress);
+
+Check DOM js
+
+
+
+
+Advanced js
+-----------
+Scope
+Control flow ( ? : , switch)
+
+ES5 ES6 new features compared to old version
+查看练习
+let 在 function 里有新scope ，不同于var
+const 后面分配的内容不能变，但是里面的property可以变
+
+/// change everything below to the newer Javascript!
+
+// let + const
+let a = 'test';
+const b = true;
+const c = 789;
+a = 'test2';
+
+
+// Destructuring
+const person = {
+    firstName : "John",
+    lastName  : "Doe",
+    age       : 50,
+    eyeColor  : "blue"
+};
+
+const { firstName, lastName, age, eyeColor } = person;
+
+
+// Object properties
+const a = 'test';
+const b = true;
+const c = 789;
+
+const okObj = {a, b, c};
+
+写strign 用`` + ${var} 会很方便，不用考虑空格的问题
+// Template strings
+const message = `Hello ${firstName} have I met you before? I think we met in ${city}. last summer no???`;
+
+
+// default arguments
+// default age to 10;
+const isValidAge = (age = 10) => age;
+
+// Symbol
+// Create a symbol: "This is my first Symbol"
+const sym = Symbol('This is my first Symbol');
+
+这样写方程会简单方便，用不用取决于自己
+// Arrow functions
+const whereAmI = (username, location) => {
+    if (username && location) {
+        return "I am not lost";
+    } else {
+        return "I am totally lost!";
+    }
+}
+
+
+//Solve these problems: 
+Array Function !!!!!
+
+//#1 Create a one line function that adds adds two parameters
+const sum = (a, b) => a + b
+
+//Closure: What does the last line return?
+const addTo = x => y => x + y
+var addToTen = addTo(10)
+addToTen(3) // returns 13
+
+//Currying: What does the last line return?
+const sum = (a, b) => a + b
+const curriedSum = (a) => (b) => a + b
+curriedSum(30)(1) // 31
+
+
+//Currying: What does the last line return?
+const sum = (a, b) => a + b
+const curriedSum = (a) => (b) => a + b
+const add5 = curriedSum(5)
+add5(12) // 17
+
+//Composing: What does the last line return?
+const compose = (f, g) => (a) => f(g(a));
+const add1 = (num) => num + 1;
+const add5 = (num) => num + 5;
+compose(add1, add5)(10) // 16
+
+//What are the two elements of a pure function?
+// 1. Deterministic --> always produces the same results given the same inputs
+// 2. No Side Effects -->  It does not depend on any state, or data, change during a program’s execution. It must only depend on its input elements.
+
+Advanced Arrays
+map fliter reduce
+
+// Complete the below questions using this array:
+const array = [
+	{
+		username: "john",
+		team: "red",
+		score: 5,
+		items: ["ball", "book", "pen"]
+	},
+	{
+		username: "becky",
+		team: "blue",
+		score: 10,
+		items: ["tape", "backpack", "pen"]
+	},
+	{
+		username: "susy",
+		team: "red",
+		score: 55,
+		items: ["ball", "eraser", "pen"]
+	},
+	{
+		username: "tyson",
+		team: "green",
+		score: 1,
+		items: ["book", "pen"]
+	},
+
+];
+
+//Create an array using forEach that has all the usernames with a "!" to each of the usernames
+let newArray = []
+array.forEach(user => {
+	let { username } = user;
+	username = username + "!";
+	newArray.push(username);
+})
+console.log(newArray);
+
+//Create an array using map that has all the usernames with a "?" at the end of usernames
+const mapArray = array.map(user => {
+	let { username } = user;
+	return username + "?";
+})
+console.log(mapArray);
+
+//Filter the array to only include users who are on team: red
+const filterArray = array.filter(user => {
+	return user.team === "red";
+})
+console.log(filterArray);
+
+//Find out the total score of all users using reduce
+const total = array.reduce((acc, user) => {
+	return acc + user.score
+}, 0);
+console.log(total);
+
+
+// (1), what is the value of i? INDEX of the array.
+// (2), Make this map function pure:
+const arrayNum = [1, 2, 4, 5, 8, 9];
+const newArray = arrayNum.map((num, i) => {
+	return num * 2;
+})
+
+
+
+//BONUS: create a new list with all user information, but add "!" to the end of each items they own.
+const answer = array.map(user => {
+	user.items = user.items.map(item => {
+		return item + "!"
+	});
+	return user;
+})
+console.log(answer);
+
+
+ES7 :
+includs and square 
+
+ES8 : 
+String method
+.padStart()
+.padEnd()
+
+// Solve the below problems:
+
+// #1) Line up the Turtle and the Rabbit at the start line:
+const startLine = '     ||<- Start line';
+let turtle = '🐢';
+let rabbit = '🐇';
+
+// it should look like this:
+'     ||<- Start line'
+'       🐢'
+'       🐇'
+
+// when you do:
+console.log(startLine);
+console.log(turtle);
+console.log(rabbit);
+
+
+turtle = turtle.padStart(8);
+rabbit = rabbit.padStart(8);
+
+
+// #2) What happens when you run turtle.trim().padEnd(9, '=') on the turtle variable
+// Read about what the second parameter does in padEnd and padStart
+turtle = turtle.trim().padEnd(9, '=');
+
+'     ||<- Start line'
+'🐢======='
+'       🐇'
+
+
+// #3) Get the below object to go from:
+let obj = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'raindeer'
+}
+// to this:
+'my name is Rudolf the raindeer'
+
+// Object.entries(obj).map(value => value.join(" ")).join(' ')
+
+Object.entries(obj).map(value => value.join(" ")).join(" ")
+   
+
+ES10(ES2019) : 
+Array method
+.flat() make nested array flat
+the default layer is 1 we can use flat(2) to get deeper
+
+flatMap()
+
+trimStart()
+trimEnd()
+
+fromEntries()
+
+try{
+
+}catch{
+
+}
+
+// Solve the below questions:
+
+// #1 Turn this array into a new array: [1,2,3,[4],[5]]. Bonus if you can do it on one line
+const array = [[1],[2],[3],[[[4]]],[[[5]]]]
+//Solution:
+console.log(array.flat(2))
+
+
+// #2 Turn this array into a new array: [ 'Hello young grasshopper!', 'you are', 'learning fast!' ]
+const greeting = [["Hello", "young", "grasshopper!"], ["you", "are"], ["learning", "fast!"]];
+//Solution:
+console.log(greeting.flatMap(x => x.join(' ')))
+
+
+//#3 Turn the greeting array above into a string: 'Hello young grasshopper you are learning fast!'
+//Solution
+console.log(greeting.flatMap(x => x.join(' ')).join(' '))
+
+//#4 Turn the trapped 3 number into: [3]
+const trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]];
+//Solution
+console.log(trapped.flat(Infinity))
+// Infintiy is actually a LARGE number in JavaScipt. It represents the maximum amount of memory that we can hold for a number! Learn more here: https://riptutorial.com/javascript/example/2337/infinity-and--infinity
+
+//#5 Clean up this email to have no whitespaces. Make the answer be in a single line (return a new string):
+const userEmail3 = '     cannotfillemailformcorrectly@gmail.com   '
+//Solution:
+console.log(userEmail3.trimEnd().trimStart())
+
+
+//#6 Turn the below users (value is their ID number) into an array: [ [ 'user1', 18273 ], [ 'user2', 92833 ], [ 'user3', 90315 ] ]
+const users = { user1: 18273, user2: 92833, user3: 90315 }
+//Solution
+const usersArray = Object.entries(users)
+
+//#7 change the output array of the above to have the user's IDs multiplied by 2 -- Should output:[ [ 'user1', 36546 ], [ 'user2', 185666 ], [ 'user3', 180630 ] ]
+//Solution
+updatedUsersArray = usersArray.map((user) => [user[0], user[1] * 2])
+
+//#8 change the output array of question #7 back into an object with all the users IDs updated to their new version. Should output: { user1: 36546, user2: 185666, user3: 180630 }
+//Solution
+const updatedUsers = Object.fromEntries(updatedUsersArray)
+console.log(updatedUsers)
+
+ES2020 ! 
+New type : bigint
+JS 采用双精度 , 2*53 -1 max_safe
+但是有bigint 可以解决，
+we can solve the problem when we try to calculate over max_safe number 
+
+Optional chaining operation
+use to check if there is property in a lot layed object instead coding in if &&
+
+Nullish Double question is used to check none or Undefined
+
+
+GITHUB 
+简单的一起在main 工作
+1. 明create a repository and a readme
+2. 明in clone or download copy ssl
+3. 明git clone ssl
+4. 明do projects , create files. now we in a .git folder
+5. 明git status
+6. 明git add . 全部变过的
+7. 明git commit -m "message"
+8. 明git push （把commit过的文件push到repository）
+9. 花git clone ssl
+10. 花变动了project , 同样git add file , git commit , git push 
+11. 明这时候git pull ， 就会得到更新
+
+有branch merge
+Git branch 
+Git branch littlefeature
+Git checkout littlefeature
+改文件，传文件去github
+另一个人可以去github merge , 再删除branch ， 就好了
+
+Before make any changes, keep your fork in sync to avoid merge conflicts:
+
+git remote add upstream // 原fork地址 https://github.com/zero-to-mastery/start-here-guidelines.git
+git pull upstream master
+
+Contributing to Open source Project
+
+
+NPM :
+share 别人写好的包裹，可能有错。
+
+live-server
+Lodash
+
+两个，global装的时候用sudo npm install -g **
+装完Lodash有一堆js，用browserify 把js 弄成一个bundle.js
+npm init 可以生产当前project 的 dependencies的json
+在有packgage的地方用npm install 就能装好全部json文件
+npm run ** 能跑json里面的scipt文件
+
+Keeping Your Projects Up To Date! 
+Update dependency packages in Github in security 很方便。
+
+个人网站！ myProfortlio
+需要继续搞
+
+React : 
+component
+How we CRA begin: 
+npx create-react-app my-app
+cd my-app
+npm start
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+class app extends component{
+
+}
+
+Should import react in different app , because we are using it as JSX (div tag)
+
+components + container + template + page 
+one way dataflow , state , only its container can change its state
+
+
+Project update , npm update / audit fix
